@@ -2,8 +2,8 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #001f3f; /* Navy Blue */
-    color: #ffffff;
+    background-color: #282c35; /* Dark Grayish Blue */
+    color: #fff;
 }
 
 nav .nav-container {
@@ -11,20 +11,29 @@ nav .nav-container {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #0074D9;
+    background-color: #373d49; /* Darker Grayish Blue */
 }
 
 nav h1 {
     margin: 0;
+    color: #61dafb; /* Bright Blue */
 }
 
 button {
-    background-color: #FF4136;
-    color: white;
+    cursor: pointer;
+}
+
+.primary-button {
+    background-color: #61dafb; /* Bright Blue */
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 8px;
-    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.primary-button:hover {
+    background-color: #4fa3d1; /* Slightly darker blue on hover */
 }
 
 main {
@@ -33,11 +42,12 @@ main {
     padding: 20px;
 }
 
-section {
-    background-color: #0074D9;
+.card {
+    background-color: #373d49; /* Darker Grayish Blue */
     padding: 20px;
-    border-radius: 8px;
+    border-radius: 10px;
     width: 45%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #betForm {
@@ -49,11 +59,11 @@ input[type="number"] {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #4fa3d1; /* Bright Blue */
 }
 
 .leaderboard-entries {
-    background-color: #001f3f; /* Slightly darker for contrast */
+    background-color: #282c35; /* Dark Grayish Blue */
     padding: 10px;
     border-radius: 8px;
 }

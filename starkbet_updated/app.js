@@ -1,8 +1,20 @@
-document.getElementById('connectWalletButton').addEventListener('click', () => {
-    // Placeholder for wallet connection logic
-    console.log('Wallet connection logic goes here');
-    // Mock user name or address display after successful connection
-    document.getElementById('userDisplay').textContent = 'Wallet Address: 0xABC...123';
-    // Show the bet form
-    document.getElementById('betForm').style.display = 'block';
+document.getElementById('connectWalletButton').addEventListener('click', async () => {
+    try {
+        // Check if the wallet is already connected
+        if (window.ethereum && window.ethereum.selectedAddress) {
+            console.log('Wallet already connected:', window.ethereum.selectedAddress);
+        } else {
+            // Request connection to the wallet
+            const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+            const selectedAddress = accounts[0];
+
+            console.log('Wallet connected:', selectedAddress);
+            // Update the user display
+            document.getElementById('userDisplay').textContent = `Wallet Address: ${selectedAddress}`;
+            // Show the bet form
+            document.getElementById('betForm').style.display = 'block';
+        }
+    } catch (error) {
+        console.error('Wallet connection error:', error);
+    }
 });
